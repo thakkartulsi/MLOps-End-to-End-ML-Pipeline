@@ -13,7 +13,7 @@ stages:
     - data/raw
     - src/data_preprocessing.py
     outs:
-    - data/processed  
+    - data/processed
   feature_engineering:
     cmd: python src/feature_engineering.py
     deps:
@@ -40,3 +40,10 @@ stages:
     - src/model_evaluation.py
     metrics:
     - reports/metrics.json
+params:
+- dvclive/params.yaml
+metrics:
+- dvclive/metrics.json
+plots:
+- dvclive/plots/metrics:
+    x: step
